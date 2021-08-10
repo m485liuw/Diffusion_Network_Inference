@@ -1,0 +1,9 @@
+For Newton's method:
+Run estimate_helper.m first then newton.m
+
+CVX: the result I got is saved in saveCVX.mat.
+If you wanna run:
+Run main.m
+CVX is needed for NetRate to work. CVX for Windows is available at http://cvxr.com/cvx/cvx.zip 
+and for Unix (Linux, MACOSX) at http://cvxr.com/cvx/cvx.tar.gz.
+For more details, go to https://github.com/Networks-Learning/netrate
