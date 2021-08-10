@@ -41,6 +41,9 @@ As stated in "Uncovering the Temporal Dynamics of Diffusion Networks", we ran CV
 
 The scalabily of our algorithm is also better. As the size of the problem increasing, CVX performs worse and worse, while our algorithm is not heavily affected.
 
-
+# Other Problems to be applied on
+https://dl-acm-org.proxy.lib.uwaterloo.ca/doi/pdf/10.1145/2623330.2623728
+https://ieeexplore-ieee-org.proxy.lib.uwaterloo.ca/stamp/stamp.jsp?tp=&arnumber=7113323&tag=1
+http://proceedings.mlr.press/v31/du13a.pdf
 
 
