@@ -1,5 +1,5 @@
 # Introduction
-This project mainly studies convex optimization methods for solving diffusion network inference problems. This project is based on the paper named  "Feature-Enhanced Probabilistic Models for Diffusion Network Inference" and "Uncovering the Temporal Dynamics of Diffusion Networks". Instead of using mentioned convex optimation methods (matlab tool cvx and l-bfgs-b), we proposed a new method: projected newton's mothod with bisection and interpolant used in line searching. 
+This project mainly studies convex optimization methods for solving diffusion network inference problems. This project is based on the paper named  "Feature-Enhanced Probabilistic Models for Diffusion Network Inference" and "Uncovering the Temporal Dynamics of Diffusion Networks". Instead of using mentioned convex optimation methods (matlab tool cvx and l-bfgs-b), we proposed a new method: projected newton's mothod with bisection and interpolant used in line searching, which is more efficient and scalable compared to the baselines. It is also noticable that our algorithm can not only apply to the papers mentions above, but also on other problems with formulation consisted of a linear term and a log term with negative coefficient.
 
 # Algorithm
 As the hessian matrix for the problem is easy to solve and the problem formulation has box constraints, we dicided to try projected newton's method. Instead of using pure newton's method with step size = 1, we choose step size t ourselves.
@@ -36,6 +36,10 @@ One can prove that in Cases 3–5, the interpolant is uniquely determined by the
 The motivation for these forms of the interpolant is that the ϕ(t) is the sum of a linear function x(t − t1) + y for some coefficients x, y and logarithmic terms of the form log(t − tl) or log(tr − t) with negative coefficients. The interpolant models just one of these terms.
 
 
+# Experimental Evaluation
+As stated in "Uncovering the Temporal Dynamics of Diffusion Networks", we ran CVX (Matlab Optimization Tool) on the synthetic networks that mimic the structure of social networks provided as example in the paper. We use CVX as baseline to compare our optimization algorithm against. The running time of CVX was 2996s, while our alogirithm only ran for 2965s which saves about 30s in running time. At the meantime, our algorithm achieved the same accuracy in terms of optimization (100%) as CVX.
+
+The scalabily of our algorithm is also better. As the size of the problem increasing, CVX performs worse and worse, while our algorithm is not heavily affected.
 
 
 
